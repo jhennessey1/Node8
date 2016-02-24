@@ -9,12 +9,14 @@ function createApplicant (req, res) {
 		why: req.body.why
 	})
 	applicant.save(function(err, savedApplicant){
-		res.redirect('/success')
+		console.log("Applicant Saved")
+		res.redirect('/applicant')
 	})
 }
 
 function getApplicants (req, res) {
 	Applicant.find({}, function(err, docs){
+		console.log('docs')
 		res.send(docs)
 	})
 }

@@ -10,5 +10,7 @@ angular.module('JobApp')
 		$http.get('/applicants')
 			.then(function(returnData){
 				$scope.applicants = returnData.data
+				console.log('yes')
+				console.log(returnData.data)
 			})
 	}]);

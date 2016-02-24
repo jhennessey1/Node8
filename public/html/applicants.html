@@ -11,7 +11,7 @@
     <div class="container">
       <h1>Applicants</h1>
       <ul id="applications" class="list-unstyled">
-        <li ng-repeat="app in applicants">{{app.name}}</li>
+        <li ng-repeat="app in applicants track by $index">{{app.name}}</li>
       </ul>
     </div>
 	  

@@ -22,9 +22,7 @@ app.get('/', function(req, res) {
 var appctrl = require('./public/controllers/appctrl.js')
 
 // displays a list of applicants
-app.get('/applicants', function(req, res){
-	res.sendFile('html/applicants.html', {root : './public'});
-});
+app.get('/applicants', appctrl.getApplicants);
 
 // creates and applicant
 app.post('/applicant', appctrl.createApplicant)
@@ -33,8 +31,8 @@ app.post('/applicant', appctrl.createApplicant)
 	
 app.post('/success', appctrl.getApplicants)
 
-app.get('/success', function(req, res){
-	res.send('Success!')
+app.get('/applicant', function(req, res){
+	res.send(req.body)
 })
 
 
